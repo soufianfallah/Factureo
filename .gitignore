@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+*.log
+*-check.pdf
+.DS_Store
+
+.vercel
+.env*

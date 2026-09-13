@@ -346,13 +346,13 @@ button:focus-visible, .toggle:focus-within { outline: 3px solid #60a5fa; outline
 .spin { animation: spin .8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-@media (max-width: 1080px) {
+@media screen and (max-width: 1080px) {
   .workspace { grid-template-columns: 1fr; }
   .editor-panel { border-right: 0; }
   .preview-panel { position: static; height: auto; padding: 30px 8vw 80px; }
 }
 
-@media (max-width: 760px) {
+@media screen and (max-width: 760px) {
   .topbar { height: auto; min-height: 68px; grid-template-columns: 1fr auto; padding: 12px 16px; }
   .document-kind { grid-column: 1 / -1; justify-self: stretch; }
   .document-kind button { flex: 1; }
@@ -377,11 +377,17 @@ button:focus-visible, .toggle:focus-within { outline: 3px solid #60a5fa; outline
 
 @media print {
   @page { size: A4; margin: 10mm; }
+  html, body, #root, .app-shell { min-height: 0; background: #fff !important; }
   .export-message, .modal-backdrop { display: none !important; }
   .topbar, .editor-panel, .preview-toolbar { display: none !important; }
-  .workspace { display: block; }
-  .preview-panel { padding: 0; margin: 0; background: #fff; overflow: visible; height: auto; }
+  .workspace { display: block; min-height: 0; }
+  .preview-panel { position: static; padding: 0; margin: 0; background: #fff !important; overflow: visible; height: auto; }
   .paper-wrap { filter: none; max-width: none; }
-  .invoice-paper { width: 100%; min-height: auto; }
+  .invoice-paper { display: block; width: 100%; min-height: 0; padding: 6mm 4mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .invoice-header { padding-bottom: 22px; }
+  .invoice-parties { grid-template-columns: 1fr 1fr; padding: 22px 0; gap: 18px; }
+  .invoice-summary { grid-template-columns: 1fr 44%; padding-top: 22px; gap: 28px; }
+  .signature-box { width: 42%; margin-top: 18px; min-height: 76px; }
+  .invoice-footer { margin-top: 22px; padding-top: 12px; flex-direction: row; }
   .invoice-table tr, .invoice-notes > div, .totals, .signature-box { break-inside: avoid; }
 }

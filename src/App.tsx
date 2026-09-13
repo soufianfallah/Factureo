@@ -19,6 +19,7 @@ import {
   X,
 } from 'lucide-react'
 import { translator } from './i18n'
+import { PrivacyMascot } from './PrivacyMascot'
 import { createDefaultDocument, dictionary } from './data'
 import type { DocumentKind, InvoiceData, LineItem, LogoPosition, TemplateStyle } from './types'
 
@@ -375,7 +376,7 @@ function PrivacyModal({ onClose, language, onLanguageChange }: { onClose: () => 
     <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
       <div className="privacy-modal">
         <LanguageSwitch language={language} onChange={onLanguageChange} />
-        <span className="modal-icon"><ShieldCheck size={28} /></span>
+        <PrivacyMascot />
         <h2 id="privacy-title">{tr("No data is stored")}</h2>
         <p>{tr("Factureo only generates your devis or facture in this browser tab. It does not create accounts, does not save documents, and does not store uploaded logos.")}</p>
         <div className="privacy-points">

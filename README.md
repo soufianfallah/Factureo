@@ -18,6 +18,7 @@ The product is intentionally simple: users create the document, customize it, do
 - No `localStorage` or saved invoice history.
 - Uploaded logos and form data only exist in the active browser tab.
 - A privacy popup appears when the app opens to explain this clearly.
+- An original SVG accountant welcomes users with a brief document handoff animation. It plays once, uses no external assets, and becomes a still illustration for reduced-motion preferences.
 
 ## Features
 
